@@ -1,5 +1,35 @@
-div.carousel-item
-{
-width: 700px;
-height: 250px;
+/* styling for the carousel body */
+div.carousel-item {
+    width: 700px;
+    height: 250px;
+    border-radius: 6px 6px 0 6px;
+    opacity: 100;
 }
+
+/* styling for the boundingBox and ContentBox(in this case) */
+#myCarousel {
+    margin: 0 auto 40px;
+}
+
+/* styling for div with id image1 */
+#image1 {
+    background: url("http://alloyui.com/carousel/img/1.jpg");
+}
+
+/* styling for div with id image2 */
+#image2 {
+    background: url("http://alloyui.com/carousel/img/2.jpg");
+}
+
+/* styling for div with id image3 */
+#image3 {
+    background: url("http://alloyui.com/carousel/img/3.jpg");
+}
+
+/* styling for div with id image4 */
+#image4 {
+    background: url("http://alloyui.com/carousel/img/4.jpg");
+}
+
+
+
