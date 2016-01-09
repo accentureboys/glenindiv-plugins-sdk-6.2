@@ -1,0 +1,102 @@
+.am-header-fixed{
+    border-top: 5px solid #208bc5;
+    box-shadow: 0px 1px 8px #666    ;
+    background-color: #fff;
+}
+.header-hidden{
+    height: 101px;
+    width: 100%;
+}
+.header-container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.header-logo{
+    float: left;
+}
+.header-logo i{
+    font-size: 6rem ;
+    color: #208bc5;
+    
+}
+header li{
+    list-style-type: none;
+    float: left;
+}
+header ul {
+    float: left;
+}
+/*form starts*/
+#register-form{
+    margin-top: 3rem;
+}
+#register-form h3{
+    color: #49B6EF;
+    font-weight: 100;
+    font-size: 1.8rem;
+    margin: 0;
+}
+.form-up{
+    overflow: hidden;
+}
+.form-up-left,.form-up-right,{
+    width: 50%;
+    float: left;
+}
+
+#register-form .register-label{
+    width: 19%;
+    color: #a4a4a4;
+    font-weight: 100;
+    display:inline-block;
+    float:left;
+}
+#register-form .register-input{
+    width: 80%;
+    display: inline-block;
+    padding:0;
+}
+#register-form .register-radios{
+    width: 80%;
+    display: inline-block;
+
+}
+
+#register-form .register-radios .am-radio {
+    float: left;
+    margin: 0;
+
+}
+.form-item-block .form-item{
+    float: left;
+}
+.form-item-block{
+    overflow: hidden;
+}
+.form-item{
+    width: 50%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.form-item-password{
+    margin-top: 9.1rem;
+}
+.form-down{
+    overflow: hidden;
+}
+#register-form .register-btn-item{
+    float: right;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    margin: 0 1rem 0 1rem;
+}
+
+/*footer started*/
+footer{
+    background-color: #40484b;
+    height: 20vh;
+    margin-top: 20vh;
+    width: 100%;
+}
