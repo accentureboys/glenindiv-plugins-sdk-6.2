@@ -72,7 +72,20 @@
                           <label class="register-label" for=""><span class="register-must">*</span>您的净体重</label>
                           <input class="register-input"  type="text" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
                        </div>
+						
+					<portlet:resourceURL var="getCaptcha" id="getCaptcha" />
 
+					<div class="form-item">
+						 <input id="reg-ver-cd-1" name="<portlet:namespace/>reg-ver-cd-1" value="<%=verifyCode%>" type="hidden"/>
+						 <label class="register-label" for=""><span class="register-must">*</span>验证码</label>
+                         <input class="register-input" id="reg-ver-cd-2" name="<portlet:namespace/>reg-ver-cd-2" type="text" maxlength="4" placeholder="请输入验证码" data-equal-to="#reg-ver-cd-1" required/>
+						 <img src="${imgSrc}" class="refreshCode" onclick="refreshCode();">
+						<aui:script>
+							var getCaptchaUrl = '${getCaptcha}';
+						</aui:script>
+							
+					</div>
+						
 						
               </div>
          <!--button group -->
