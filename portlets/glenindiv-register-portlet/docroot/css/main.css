@@ -3,63 +3,106 @@
     box-shadow: 0px 1px 8px #666    ;
     background-color: #fff;
 }
+
 .header-hidden{
     height: 101px;
     width: 100%;
 }
+
 .header-container{
     max-width: 1000px;
     margin: 0 auto;
 }
+
 .header-logo{
     float: left;
 }
+
 .header-logo i{
     font-size: 6rem ;
     color: #208bc5;
-    
 }
+
 header li{
     list-style-type: none;
     float: left;
 }
+
 header ul {
     float: left;
 }
+
 /*form starts*/
 #register-form{
     margin-top: 3rem;
 }
+
 #register-form h3{
     color: #49B6EF;
     font-weight: 100;
     font-size: 1.8rem;
     margin: 0;
 }
+
 .form-up{
     overflow: hidden;
 }
-.form-up-left,.form-up-right,{
+
+.form-up-left,.form-up-right{
     width: 50%;
     float: left;
 }
 
-#register-form .register-label{
-    width: 19%;
-    color: #a4a4a4;
-    font-weight: 100;
-    display:inline-block;
-    float:left;
-}
-#register-form .register-input{
-    width: 80%;
+#register-form .register-must{
+	color: #f00;
     display: inline-block;
-    padding:0;
+    float: left;
+    padding: 0 5px;
 }
-#register-form .register-radios{
-    width: 80%;
-    display: inline-block;
 
+#register-from .btn-dis{
+	background: #7e7878 none repeat scroll 0 0 !important;
+}
+
+#register-form .register-label{
+	display: inline-block;
+    font-size: 16px;
+    height: 38px;
+    line-height: 38px;
+    text-align: left;
+    vertical-align: middle;
+	width: 12%;
+	margin-left: 140px;
+}
+
+#register-form .register-input{
+	height: 36px;
+    width: 40%;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+#register-form .register-instruction{
+	background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #c8c8c8;
+    color: #888;
+    display: inline-block;
+    font-size: 12px;
+    height: 38px;
+    line-height: 36px;
+    margin-left: 10px;
+    padding: 0 10px;
+    vertical-align: middle;
+    width: 40%;
+}
+
+#register-form .register-radios{
+    width: 40%;
+    display: inline-block;
+	height: 36px;
+	vertical-align: middle;
 }
 
 #register-form .register-radios .am-radio {
@@ -74,7 +117,7 @@ header ul {
     overflow: hidden;
 }
 .form-item{
-    width: 50%;
+    width: 100%;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;

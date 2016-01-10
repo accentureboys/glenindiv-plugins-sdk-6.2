@@ -24,25 +24,20 @@
           <form action="<%= registerUserURL %>" method="POST" class="am-form" id="register-form" data-am-validator>
 
               <div class="form-up" >
-                  <h3>基本资料</h3>
 
                       <div class="form-item">
-                          <label class="register-label" class="register-label" for="">用户名</label>
-                          <input class="register-input" type="text" name="<portlet:namespace/>userName" required/>
+                          <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
+                          <input class="register-input" type="text" name="<portlet:namespace/>userName" required placeholder="请输入邮箱或手机号"/>
                       </div>
-                  <div class="form-item-block">
+                      
                       <div class="form-item">
-                          <label  class="register-label" for="">姓</label>
-                          <input class="register-input"  type="text" name="<portlet:namespace/>lastName" required/>
+                          <label class="register-label" for=""><span class="register-must">*</span>姓名</label>
+                          <input class="register-input" minlength="2" type="text" name="<portlet:namespace/>name" required/>
                       </div>
+        
                       <div class="form-item">
-                          <label class="register-label" for="">名</label>
-                          <input class="register-input" type="text" name="<portlet:namespace/>firstName" required/>
-                      </div>
-                  </div>
-                      <div class="form-item">
-                      <label class="register-label" for="">性别</label>
-                      <div class="register-radios">
+                      	<label class="register-label" for=""><span class="register-must">*</span>性别</label>
+                      	<div class="register-radios">
                               <div class="am-radio">
                                   <label>
                                       <input type="radio" name="<portlet:namespace/>gender" value="1" checked>
@@ -55,52 +50,30 @@
                                       女
                                   </label>
                               </div>
+                      	</div>
                       </div>
-                      </div>
-                  <div class="form-item-block">
+                      
                       <div class="form-item">
-                          <label class="register-label" for="">密码</label>
+                          <label class="register-label" for=""><span class="register-must">*</span>请设置密码</label>
                           <input class="register-input" minlength="6" id="reg-vld-pwd-1" name="<portlet:namespace/>pwd" type="password" placeholder="请输入至少6位密码" required/>
                       </div>
 
                       <div class="form-item">
-                          <label class="register-label" for="">密码确认</label>
+                          <label class="register-label" for=""><span class="register-must">*</span>请确认密码</label>
                           <input class="register-input" id="reg-vld-pwd-2" name="<portlet:namespace/>repeat_pwd" type="password"  placeholder="请与上面输入的值一致" data-equal-to="#reg-vld-pwd-1" required/>
-                      </div>
-                  </div>
+                      </div>            
 
-              </div>
-              <hr/>
-              <div class="form-down">
-                  <h3>联系方式</h3>
-                  <div class="form-down-container">
-                          <div class="form-item">
-                              <label class="register-label" class="register-label" for="">邮箱地址</label>
-                              <input class="register-input"  type="text" name="<portlet:namespace/>emailAddress" required/>
-                          </div>
-                          <div class="form-item">
-                              <label  class="register-label" for="">手机号码</label>
-                              <input class="register-input"  type="text"  name="<portlet:namespace/>telphone" required/>
-                          </div>
+                      <div class="form-item">
+                          <label class="register-label" for=""><span class="register-must">*</span>您的净身高</label>
+                          <input class="register-input"  type="text" name="<portlet:namespace/>height" required/><span class="body">cm</span>
+                       </div>
+                       
+                       <div class="form-item">
+                          <label class="register-label" for=""><span class="register-must">*</span>您的净体重</label>
+                          <input class="register-input"  type="text" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
+                       </div>
 
-                          <div class="form-item">
-                              <label class="register-label" for="">其他方式</label>
-                              <input class="register-input" type="text"/>
-                          </div>
-
-						 <portlet:resourceURL var="getCaptcha" id="getCaptcha" />
-
-						 <div class="form-item">
-						 	<input id="reg-ver-cd-1" name="<portlet:namespace/>reg-ver-cd-1" value="<%=verifyCode%>" type="hidden"/>
-						 	<label class="register-label" for="">验证码</label>
-                          	<input class="register-input" id="reg-ver-cd-2" name="<portlet:namespace/>reg-ver-cd-2" type="text" maxlength="4" placeholder="请输入验证码" data-equal-to="#reg-ver-cd-1" required/>
-							<img src="${imgSrc}" class="refreshCode" onclick="refreshCode();">
-						<aui:script>
-							var getCaptchaUrl = '${getCaptcha}';
-						</aui:script>
-					</div>
-
-                  </div>
+						
               </div>
          <!--button group -->
               <div class="register-btn am-cf">
