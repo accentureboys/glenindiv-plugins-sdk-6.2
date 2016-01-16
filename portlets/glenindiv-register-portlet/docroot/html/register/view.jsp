@@ -1,8 +1,6 @@
 <%@include file="/html/init.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/main.js"></script>
-
 <portlet:actionURL name="registerUser" var="registerUserURL" windowState="normal" />
 
 <liferay-ui:error key="all-required" message="所有选项均为必填项！" />
@@ -27,13 +25,13 @@
 
                       <div class="form-item">
                           <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
-                          <input class="register-input" type="text" name="<portlet:namespace/>userName" required placeholder="请输入邮箱或手机号"/>
+                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="userName" required placeholder="请手机号"/>
                       
                       <portlet:resourceURL var="resourceURL"/>
                       
                       </div>
                       	  <label class="register-label" for=""><span class="register-must">*</span></label>
-                      	  <input type="button" value="Click" onclick="callServeResource()">
+                      	  <input class="register-input" type="button" value="免费获取验证码" onclick="callServeResource()">
                       <div class="form-item">
                       	
                       </div>
@@ -96,7 +94,14 @@
 <script type="text/javascript">
 function callServeResource(){
     AUI().use('aui-io-request', function(A){
-        A.io.request('<%=resourceURL.toString()%>');
+ 
+        A.io.request('<%=resourceURL.toString()%>', {
+               method: 'post',
+               data: {
+            	   <portlet:namespace />userName: $('#userName').val()
+               }
+        });
+ 
     });
 }
 </script>
