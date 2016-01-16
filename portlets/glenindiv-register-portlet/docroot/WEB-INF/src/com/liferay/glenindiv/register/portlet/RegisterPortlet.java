@@ -20,22 +20,11 @@ public class RegisterPortlet extends MVCPortlet {
 	VerifyCodeService vcs = new VerifyCodeService();
 	
 	@Override
-	public void doView(RenderRequest renderRequest,
-			RenderResponse renderResponse) throws IOException, PortletException {
-		// TODO Auto-generated method stub
-		String imgSrc = vcs.createCode();
+	public void serveResource(ResourceRequest resourceRequest, ResourceResponse resourceResponse)
+			throws IOException, PortletException {
+		System.out.println("#############AJAX CALL####################");
 		String verifyCode = vcs.getCode();
-		renderRequest.setAttribute("verifyCode", verifyCode);
-		renderRequest.setAttribute("imgSrc", imgSrc);
-		super.doView(renderRequest, renderResponse);
-	}
-	
-	@Override
-	public void serveResource(ResourceRequest request, ResourceResponse response)
-			throws IOException {
-		String newImgSrc = vcs.createCode();
-		String verifyCode = vcs.getCode();
-		response.getWriter().append(newImgSrc+"|"+verifyCode);
+        super.serveResource(resourceRequest, resourceResponse);
 	}
 
 	protected void include(String path, RenderRequest renderRequest,
