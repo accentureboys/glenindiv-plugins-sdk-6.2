@@ -24,7 +24,7 @@
               <div class="form-up" >
                       <div class="form-item">
                           <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
-                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="<portlet:namespace/>userName" required placeholder="请手机号"/>
+                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="<portlet:namespace/>userName" required placeholder="请输入手机号"/>
                       </div>
                       	  
                       <div class="form-item">
@@ -107,7 +107,6 @@ function callServeResource(){
         	       success : function() {
         	       		var resultArray = this.get('responseData');
         	       		var data = resultArray.split("|");
-        	       		alert(data[0]);
         	       		if(data[0] == 'error'){
         	    	     	var errorMessageNode = A.Node.create('<div class="portlet-msg-error">手机号格式不正确！</div>');
         	    	     	errorMessageNode.set("id","message");
