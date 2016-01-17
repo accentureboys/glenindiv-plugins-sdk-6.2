@@ -5,7 +5,6 @@
 
 <liferay-ui:error key="all-required" message="所有选项均为必填项！" />
 <liferay-ui:error key="password-not-match" message="两次密码不一致！" />
-<liferay-ui:error key="mobile-format-not-correct" message="手机号格式不正确！" />
 <liferay-ui:error key="vercd-not-match" message="验证码不匹配！" />
 
 <%
@@ -20,7 +19,7 @@
   <main>
 	<div class="am-g-fixed am-u-md-10 am-u-sm-centered">
           <form action="<%= registerUserURL %>" method="POST" class="am-form" id="register-form" data-am-validator>
-
+              <span id="group-error-block"></span>
               <div class="form-up" >
                       <div class="form-item">
                           <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
@@ -92,8 +91,8 @@
 
 <script type="text/javascript">
 function callServeResource(){
-    AUI().use('aui-io-request', function(A){
- 
+    AUI().use('aui-io-request', 'node', function(A){
+    	var errorBlock=A.one('#group-error-block');
         A.io.request('<%=resourceURL.toString()%>', {
                method: 'post',
                data: {
@@ -101,9 +100,12 @@ function callServeResource(){
                },
                on : {
         	       success : function() {
-        	       alert("test");
-        	       var data = this.get('responseData');
-        	       alert(data);
+        	       		var data = this.get('responseData');
+        	       		if(data == 'error'){
+        	    	     	var errorMessageNode = A.Node.create('<div class="portlet-msg-error">手机号格式不正确！</div>');
+        	    	     	errorMessageNode.appendTo(errorBlock);
+        	    	     	return false;
+        	    		}
         	       }
                }
         });
