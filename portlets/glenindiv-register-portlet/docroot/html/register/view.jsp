@@ -19,7 +19,7 @@
   <main>
 	<div class="am-g-fixed am-u-md-10 am-u-sm-centered">
           <form action="<%= registerUserURL %>" method="POST" class="am-form" id="register-form" data-am-validator>
-              <span id="group-error-block"></span>
+              <span id="group-msg-block"></span>
               <div class="form-up" >
                       <div class="form-item">
                           <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
@@ -92,7 +92,7 @@
 <script type="text/javascript">
 function callServeResource(){
     AUI().use('aui-io-request', 'node', function(A){
-    	var errorBlock=A.one('#group-error-block');
+    	var msgBlock=A.one('#group-msg-block');
         A.io.request('<%=resourceURL.toString()%>', {
                method: 'post',
                data: {
@@ -103,8 +103,11 @@ function callServeResource(){
         	       		var data = this.get('responseData');
         	       		if(data == 'error'){
         	    	     	var errorMessageNode = A.Node.create('<div class="portlet-msg-error">手机号格式不正确！</div>');
-        	    	     	errorMessageNode.appendTo(errorBlock);
+        	    	     	errorMessageNode.appendTo(msgBlock);
         	    	     	return false;
+        	    		}else if(data == 'success'){
+        	    			var successMessageNode = A.Node.create('<div class="portlet-msg-success">短信验证码已经发送到您的手机上，请注意查收。</div>');
+        	    			successMessageNode.appendTo(msgBlock);
         	    		}
         	       }
                }
