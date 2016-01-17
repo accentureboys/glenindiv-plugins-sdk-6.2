@@ -20,6 +20,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 /**
+ * This class is used to send verification code by SMS.
+ * 
  * @author Jason
  *
  */
