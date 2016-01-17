@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <portlet:actionURL name="registerUser" var="registerUserURL" windowState="normal" />
+<portlet:resourceURL var="resourceURL"/>
 
 <liferay-ui:error key="all-required" message="所有选项均为必填项！" />
 <liferay-ui:error key="password-not-match" message="两次密码不一致！" />
@@ -24,14 +25,17 @@
                       <div class="form-item">
                           <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
                           <input class="register-input" type="text" name="<portlet:namespace/>userName" id="userName" required placeholder="请手机号"/>
-                      
-                      <portlet:resourceURL var="resourceURL"/>
-                      
                       </div>
-                      	  <label class="register-label" for=""><span class="register-must">*</span></label>
-                      	  <input class="register-input" type="button" value="免费获取验证码" onclick="callServeResource()">
+                      	  
                       <div class="form-item">
-                      	
+                      	   <label class="register-label" for=""><span class="register-must">*</span></label>
+                      	   <input class="register-input" type="button" value="免费获取验证码" onclick="callServeResource()">
+                      </div>
+                      
+                      <div class="form-item">
+                      	   <label class="register-label" for=""><span class="register-must">*</span>验证码</label>
+                      	   <input id="reg-ver-cd-1" name="<portlet:namespace/>reg-ver-cd-1"  type="hidden"/>
+                      	   <input class="register-input" id="reg-ver-cd-2" name="<portlet:namespace/>reg-ver-cd-2" type="text" maxlength="4" placeholder="请输入验证码" data-equal-to="#reg-ver-cd-1" required/>
                       </div>
                       
                       <div class="form-item">
@@ -100,14 +104,18 @@ function callServeResource(){
                },
                on : {
         	       success : function() {
-        	       		var data = this.get('responseData');
-        	       		if(data == 'error'){
+        	       		var resultArray = this.get('responseData');
+        	       		var data = resultArray.split("|");
+        	       		alert(data[0]);
+        	       		if(data[0] == 'error'){
         	    	     	var errorMessageNode = A.Node.create('<div class="portlet-msg-error">手机号格式不正确！</div>');
         	    	     	errorMessageNode.appendTo(msgBlock);
         	    	     	return false;
-        	    		}else if(data == 'success'){
+        	    		}else if(data[0] == 'success'){
+        	    			//msgBlock.removeClass('portlet-msg-error');
         	    			var successMessageNode = A.Node.create('<div class="portlet-msg-success">短信验证码已经发送到您的手机上，请注意查收。</div>');
         	    			successMessageNode.appendTo(msgBlock);
+        	    			$("#reg-ver-cd-1").val(data[1]);
         	    		}
         	       }
                }

@@ -45,9 +45,9 @@ public class RegisterPortlet extends MVCPortlet {
 			String verifyCode = vcs.getCode();
 			String text = "【GLENINDIV】开启专属人生，您的验证码是" + verifyCode;
 			//Automatic apply mode to send SMS verification code
-			javaSmsApi.sendSms(apikey, text, mobile);
+			//javaSmsApi.sendSms(apikey, text, mobile);
 			_log.info("----------verification code has been sent------------");
-			resourceResponse.getWriter().append("success");	
+			resourceResponse.getWriter().append("success"+"|"+verifyCode);	
 		}
         super.serveResource(resourceRequest, resourceResponse);
 	} 
