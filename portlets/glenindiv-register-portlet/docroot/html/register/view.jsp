@@ -24,7 +24,7 @@
               <div class="form-up" >
                       <div class="form-item">
                           <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
-                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="userName" required placeholder="请手机号"/>
+                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="<portlet:namespace/>userName" required placeholder="请手机号"/>
                       </div>
                       	  
                       <div class="form-item">
@@ -95,12 +95,13 @@
 
 <script type="text/javascript">
 function callServeResource(){
-    AUI().use('aui-io-request', 'node', function(A){
+    AUI().use('aui-base', 'aui-io-request', 'node', function(A){
     	var msgBlock=A.one('#group-msg-block');
+    	var inputUserName = A.one("#<portlet:namespace/>userName").get("value");
         A.io.request('<%=resourceURL.toString()%>', {
                method: 'post',
                data: {
-            	   <portlet:namespace />userName: $('#userName').val()
+            	   <portlet:namespace />userName: inputUserName
                },
                on : {
         	       success : function() {
@@ -109,12 +110,14 @@ function callServeResource(){
         	       		alert(data[0]);
         	       		if(data[0] == 'error'){
         	    	     	var errorMessageNode = A.Node.create('<div class="portlet-msg-error">手机号格式不正确！</div>');
+        	    	     	errorMessageNode.set("id","message");
         	    	     	errorMessageNode.appendTo(msgBlock);
         	    	     	return false;
         	    		}else if(data[0] == 'success'){
-        	    			//msgBlock.removeClass('portlet-msg-error');
-        	    			var successMessageNode = A.Node.create('<div class="portlet-msg-success">短信验证码已经发送到您的手机上，请注意查收。</div>');
-        	    			successMessageNode.appendTo(msgBlock);
+        	    			var messageNode = A.one("#message");
+        	    			messageNode.removeClass('portlet-msg-error');
+        	    			messageNode.addClass('portlet-msg-success');
+        	    			messageNode.setHTML('短信验证码已经发送到您的手机上，请注意查收');
         	    			$("#reg-ver-cd-1").val(data[1]);
         	    		}
         	       }
