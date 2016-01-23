@@ -94,6 +94,26 @@
 </body>
 
 <script type="text/javascript">
+var wait=60;
+function time() {
+	console.log(wait);
+	if (wait == 0) {
+		$('#vCodebutton').removeAttr("disabled"); 
+		$('#vCodebutton').removeClass("btn-dis");
+		$('#vCodebutton').addClass("btn-info");
+		$('#vCodebutton').val('免费获取验证码');
+		wait = 60;
+	} else {
+		$('#vCodebutton').attr("disabled", true);
+		$('#vCodebutton').val('重新发送(' + wait + ')');
+		wait--;
+		setTimeout(function() {
+		time()
+		},
+		1000)
+	}
+}
+
 function callServeResource(){
     AUI().use('aui-base', 'aui-io-request', 'node', function(A){
     	var button=A.one('#vCodebutton');
@@ -127,6 +147,7 @@ function callServeResource(){
         	    			messageNode.setHTML('短信验证码已经发送到您的手机上，请注意查收');
         	    			button.replaceClass('btn-info','btn-dis');
         	    			button.attr('disabled', 'disabled');
+        	    			time();	
         	    			$("#reg-ver-cd-1").val(data[1]);
         	    		}
         	       }
