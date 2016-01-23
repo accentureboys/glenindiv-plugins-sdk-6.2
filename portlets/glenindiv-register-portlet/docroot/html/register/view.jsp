@@ -18,66 +18,57 @@
 <body>
 <!--main content start-->
   <main>
-	<div class="am-g-fixed am-u-md-10 am-u-sm-centered">
           <form action="<%= registerUserURL %>" method="POST" class="am-form" id="register-form" data-am-validator>
               <span id="group-msg-block"></span>
-              <div class="form-up" >
+              <div class="register-form" >
                       <div class="form-item">
-                          <label class="register-label" for=""><span class="register-must">*</span>用户名</label>
+                          <label  for=""><span class="register-must">*</span>用户名</label>
                           <input class="register-input" type="text" name="<portlet:namespace/>userName" id="<portlet:namespace/>userName" required placeholder="请输入手机号"/>
                       </div>
                       	  
                       <div class="form-item">
-                      	   <label class="register-label" for=""><span class="register-must">*</span></label>
+                      	   <label for=""><span class="register-must">*</span></label>
                       	   <input class="btn-info" type="button" value="免费获取验证码" id="vCodebutton" onclick="callServeResource()" >
                       </div>
                       
                       <div class="form-item">
-                      	   <label class="register-label" for=""><span class="register-must">*</span>验证码</label>
+                      	   <label for=""><span class="register-must">*</span>验证码</label>
                       	   <input id="reg-ver-cd-1" name="<portlet:namespace/>reg-ver-cd-1"  type="hidden"/>
                       	   <input class="register-input" id="reg-ver-cd-2" name="<portlet:namespace/>reg-ver-cd-2" type="text" maxlength="4" placeholder="请输入验证码" data-equal-to="#reg-ver-cd-1" required/>
                       </div>
                       
                       <div class="form-item">
-                          <label class="register-label" for=""><span class="register-must">*</span>姓名</label>
-                          <input class="register-input" minlength="2" type="text" name="<portlet:namespace/>name" required/>
+                          <label for=""><span class="register-must">*</span>姓名</label>
+                          <input class="register-input" minlength="2" type="text" name="<portlet:namespace/>name" placeholder="请输入姓名" required/>
                       </div>
         
                       <div class="form-item">
-                      	<label class="register-label" for=""><span class="register-must">*</span>性别</label>
+                      	<label for=""><span class="register-must">*</span>性别</label>
                       	<div class="register-radios">
-                              <div class="am-radio">
-                                  <label>
-                                      <input type="radio" name="<portlet:namespace/>gender" value="1" checked>
-                                      男
-                                  </label>
-                              </div>
-                              <div class="am-radio">
-                                  <label>
-                                      <input type="radio" name="<portlet:namespace/>gender" value="0">
-                                      女
-                                  </label>
-                              </div>
+                              <input type="radio" name="<portlet:namespace/>gender" value="1" checked>
+                                    <span>男</span>
+                              <input type="radio" name="<portlet:namespace/>gender" value="0">
+                                    <span>女</span>
                       	</div>
                       </div>
                       
                       <div class="form-item">
-                          <label class="register-label" for=""><span class="register-must">*</span>请设置密码</label>
+                          <label for=""><span class="register-must">*</span>请设置密码</label>
                           <input class="register-input" minlength="6" id="reg-vld-pwd-1" name="<portlet:namespace/>pwd" type="password" placeholder="请输入至少6位密码" required/>
                       </div>
 
                       <div class="form-item">
-                          <label class="register-label" for=""><span class="register-must">*</span>请确认密码</label>
+                          <label for=""><span class="register-must">*</span>请确认密码</label>
                           <input class="register-input" id="reg-vld-pwd-2" name="<portlet:namespace/>repeat_pwd" type="password"  placeholder="请与上面输入的值一致" data-equal-to="#reg-vld-pwd-1" required/>
                       </div>            
 
                       <div class="form-item">
-                          <label class="register-label" for=""><span class="register-must">*</span>您的净身高</label>
+                          <label for=""><span class="register-must">*</span>您的净身高</label>
                           <input class="register-input"  type="text" name="<portlet:namespace/>height" required/><span class="body">cm</span>
                        </div>
                        
                        <div class="form-item">
-                          <label class="register-label" for=""><span class="register-must">*</span>您的净体重</label>
+                          <label for=""><span class="register-must">*</span>您的净体重</label>
                           <input class="register-input"  type="text" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
                        </div>	
 						
@@ -89,7 +80,6 @@
               </div>
 
           </form>
-      </div>
   </main>
 </body>
 
