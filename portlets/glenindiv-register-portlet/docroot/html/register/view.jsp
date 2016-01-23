@@ -71,12 +71,7 @@
                           <label for=""><span class="register-must">*</span>您的净体重</label>
                           <input class="register-input"  type="text" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
                        </div>	
-						
-              </div>
-         <!--button group -->
-              <div class="register-btn am-cf">
-                  <input type="submit" class="am-btn am-btn-primary am-btn-sm register-btn-item" value="提交"/>
-                  <button class="am-btn am-btn-default am-btn-sm register-btn-item">重置</button>
+						<button class="register" type="submit" id="button">立即注册</button>
               </div>
 
           </form>

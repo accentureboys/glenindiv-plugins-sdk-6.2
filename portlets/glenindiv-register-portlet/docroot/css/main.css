@@ -80,6 +80,7 @@ header ul {
     height: 38px;
     line-height: 38px;
     vertical-align: middle;
+    margin-left: 80px;
 }
 
 .register-form .register-input{
@@ -89,6 +90,23 @@ header ul {
     padding: 0;
     margin: 0;
     font-size: 14px;
+}
+
+.register-form .register{
+	width: 307px;
+    height: 34px;
+    background: #ff0e0e;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
+    line-height: 34px;
+    cursor: pointer;
+    margin-left: 300px;
+    margin-bottom: 30px;
 }
 
 .register-form .register-instruction{
@@ -134,13 +152,6 @@ header ul {
 
 .form-item-password{
     margin-top: 9.1rem;
-}
-
-.register-form .register-btn-item{
-    float: right;
-    padding-right: 4rem;
-    padding-left: 4rem;
-    margin: 0 1rem 0 1rem;
 }
 
 /*footer started*/
