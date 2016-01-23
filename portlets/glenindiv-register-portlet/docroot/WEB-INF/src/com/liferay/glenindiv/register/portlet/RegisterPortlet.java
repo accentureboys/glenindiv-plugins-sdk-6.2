@@ -14,7 +14,6 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
-import com.liferay.portal.kernel.util.Validator;
 
 /**
  * Portlet implementation class RegisterPortlet
@@ -32,7 +31,7 @@ public class RegisterPortlet extends MVCPortlet {
 	public void serveResource(ResourceRequest resourceRequest, ResourceResponse resourceResponse)
 			throws IOException, PortletException {
 		String mobile = ParamUtil.getString(resourceRequest, "userName");
-		if(!Validator.isPhoneNumber(mobile)){
+		if(!Validator.isMobile(mobile)){
 			SessionErrors.add(resourceRequest, "mobile-format-not-correct");
 			_log.error("User input incorrect telephone number format.");
 			resourceResponse.getWriter().append("error");
