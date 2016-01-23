@@ -29,7 +29,7 @@
                       	  
                       <div class="form-item">
                       	   <label class="register-label" for=""><span class="register-must">*</span></label>
-                      	   <input class="register-input" type="button" value="免费获取验证码" id="sendCode" onclick="callServeResource()">
+                      	   <input class="btn-info" type="button" value="免费获取验证码" id="vCodebutton" onclick="callServeResource()" >
                       </div>
                       
                       <div class="form-item">
@@ -96,7 +96,7 @@
 <script type="text/javascript">
 function callServeResource(){
     AUI().use('aui-base', 'aui-io-request', 'node', function(A){
-    	var button=A.one('#sendCode');
+    	var button=A.one('#vCodebutton');
     	var msgBlock=A.one('#group-msg-block');
     	var messageNode=A.one('#message');
     	//check whether message node exists before, if exists, remove it
@@ -125,6 +125,8 @@ function callServeResource(){
         	    		}else if(data[0] == 'success'){
         	    			messageNode.addClass('portlet-msg-success');
         	    			messageNode.setHTML('短信验证码已经发送到您的手机上，请注意查收');
+        	    			button.replaceClass('btn-info','btn-dis');
+        	    			button.attr('disabled', 'disabled');
         	    			$("#reg-ver-cd-1").val(data[1]);
         	    		}
         	       }
