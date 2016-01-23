@@ -71,7 +71,11 @@
                           <label for=""><span class="register-must">*</span>您的净体重</label>
                           <input class="register-input"  type="text" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
                        </div>	
-						<button class="register" type="submit" id="button">立即注册</button>
+                       
+                       <h3 class="cfm-ttl"><span class="register-must">*</span>体型确认</h3>
+                       <h3 class="cfm-ttl-en">SHAPE CONFIRMATION</h3>
+                       
+					   <button class="register" type="submit" id="button">立即注册</button>
               </div>
 
           </form>

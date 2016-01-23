@@ -1,3 +1,10 @@
+/* override aui h3 class */
+.aui h3{
+	line-height: 20px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
 .am-header-fixed{
     border-top: 5px solid #208bc5;
     box-shadow: 0px 1px 8px #666    ;
@@ -33,14 +40,6 @@ header ul {
 }
 
 /*form starts*/
-
-#register-form h3{
-    color: #49B6EF;
-    font-weight: 100;
-    font-size: 1.8rem;
-    margin: 0;
-}
-
 .register-form{
     overflow: hidden;
     width: 880px;
@@ -152,6 +151,18 @@ header ul {
 
 .form-item-password{
     margin-top: 9.1rem;
+}
+
+.register-form .cfm-ttl {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+}
+
+.register-form .cfm-ttl-en {
+    font-size: 14px;
+    text-align: center;
+    color: #555;
 }
 
 /*footer started*/
