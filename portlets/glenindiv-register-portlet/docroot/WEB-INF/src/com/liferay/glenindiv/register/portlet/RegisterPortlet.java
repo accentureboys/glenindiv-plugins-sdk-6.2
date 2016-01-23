@@ -1,7 +1,6 @@
 package com.liferay.glenindiv.register.portlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.portlet.PortletException;
 import javax.portlet.PortletRequestDispatcher;
@@ -10,8 +9,6 @@ import javax.portlet.RenderResponse;
 import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
 
-import com.liferay.portal.kernel.json.JSONFactoryUtil;
-import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.servlet.SessionErrors;
