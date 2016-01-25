@@ -75,6 +75,28 @@
                        <h3 class="cfm-ttl"><span class="register-must">*</span>体型确认</h3>
                        <h3 class="cfm-ttl-en">SHAPE CONFIRMATION</h3>
                        
+                       <div class="cfm-items">
+                       	  <h4 class="cfm-item-ttl">后背 back</h4>
+                       	  <div class="cfm-item-list" id="back">
+                       	  	 <div class="cfm-item" data_sj="后仰">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/back1.png" class="cfm-item-img">
+                       	  	    <h3>后仰</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="标准">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/back2.png" class="cfm-item-img">
+                       	  	    <h3>标准</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="轻微驼背">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/back3.png" class="cfm-item-img">
+                       	  	    <h3>轻微驼背</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="严重驼背">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/back4.png" class="cfm-item-img">
+                       	  	    <h3>严重驼背</h3>
+                       	  	 </div>
+                       	  </div>
+                       	  
+                       </div>
 					   <button class="register" type="submit" id="button">立即注册</button>
               </div>
 
@@ -83,6 +105,11 @@
 </body>
 
 <script type="text/javascript">
+$(function(){
+		$('.cfm-item-list .cfm-item').on('click', function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+	});
 var wait=60;
 function time() {
 	console.log(wait);

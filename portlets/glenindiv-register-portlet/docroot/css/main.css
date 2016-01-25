@@ -165,6 +165,56 @@ header ul {
     color: #555;
 }
 
+.register-form .cfm-items {
+    width: 600px;
+    margin: 0 auto;
+    font-size: 0;
+    text-align: center;
+}
+
+.register-form .cfm-item-ttl {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.register-form .cfm-item-list {
+    width: 100%;
+    text-align: center;
+}
+
+.register-form .cfm-item-list .cfm-item {
+    display: inline-block;
+    width: 96px;
+    border: 2px solid #fff;
+    margin-right: 10px;
+    margin-top: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.register-form .cfm-item-list .active {
+    border: 2px solid #47bcff;
+}
+
+.register-form .cfm-item-list .cfm-item .cfm-item-img{
+	width: 96px !important;
+	height: 106px !important;
+}
+
+.register-form .cfm-item-list .cfm-item h3 {
+    font-size: 12px;
+    color: #666;
+    padding: 10px 0;
+}
+
+.register-form .cfm-item-list .active h3 {
+    background: #47bcff;
+    color: #fff;
+}
 /*footer started*/
 footer{
     background-color: #40484b;
