@@ -75,6 +75,7 @@
                        <h3 class="cfm-ttl"><span class="register-must">*</span>体型确认</h3>
                        <h3 class="cfm-ttl-en">SHAPE CONFIRMATION</h3>
                        
+                       <!-- Shape Confirmation for Back -->
                        <div class="cfm-items">
                        	  <h4 class="cfm-item-ttl">后背 back</h4>
                        	  <div class="cfm-item-list" id="back">
@@ -95,8 +96,70 @@
                        	  	    <h3>严重驼背</h3>
                        	  	 </div>
                        	  </div>
-                       	  
                        </div>
+                       
+                       <!-- Shape Confirmation for Shoulder Overlook -->
+                       <div class="cfm-items">
+                       	  <h4 class="cfm-item-ttl">肩膀 shoulder 俯视</h4>
+                       	  <div class="cfm-item-list" id="shoulder_f">
+                       	  	 <div class="cfm-item" data_sj="严重后仰">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder1.png" class="cfm-item-img">
+                       	  	    <h3>严重后仰</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="轻微后仰">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder2.png" class="cfm-item-img">
+                       	  	    <h3>轻微后仰</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="标准">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder3.png" class="cfm-item-img">
+                       	  	    <h3>标准</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="轻微前冲">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder4.png" class="cfm-item-img">
+                       	  	    <h3>轻微前冲</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="严重前冲">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder4.png" class="cfm-item-img">
+                       	  	    <h3>严重前冲</h3>
+                       	  	 </div>
+                       	  </div>
+                       </div>
+                       
+                       <!-- Shape Confirmation for Shoulder Straight Look -->
+                       <div class="cfm-items">
+                       	  <h4 class="cfm-item-ttl">肩膀 shoulder 平视</h4>
+                       	  <div class="cfm-item-list" id="shoulder_p">
+                       	  	 <div class="cfm-item" data_sj="标准">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder6.png" class="cfm-item-img">
+                       	  	    <h3>标准</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="平肩">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder7.png" class="cfm-item-img">
+                       	  	    <h3>平肩</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="溜肩">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder8.png" class="cfm-item-img">
+                       	  	    <h3>溜肩</h3>
+                       	  	 </div>
+                       	  </div>
+                       </div>
+                       
+                       <!-- Shape Confirmation for Belly -->
+                       <div class="cfm-items" style="margin-bottom: 100px;">
+                       	  <h4 class="cfm-item-ttl">肚子 belly</h4>
+                       	  <div class="cfm-item-list" id="belly">
+                       	  	 <div class="cfm-item" data_sj="标准">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/belly1.png" class="cfm-item-img">
+                       	  	    <h3>标准</h3>
+                       	  	 </div>
+                       	  	 <div class="cfm-item" data_sj="啤酒肚">
+                       	  	 	<img src="<%= request.getContextPath()%>/images/login/belly2.png" class="cfm-item-img">
+                       	  	    <h3>啤酒肚</h3>
+                       	  	 </div>
+                       	  </div>
+                       </div>
+                       
+                       <!-- Register Button for whole Register Page -->
 					   <button class="register" type="submit" id="button">立即注册</button>
               </div>
 
