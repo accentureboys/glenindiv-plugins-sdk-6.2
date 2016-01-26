@@ -18,12 +18,12 @@
 <body>
 <!--main content start-->
   <main>
-          <form action="<%= registerUserURL %>" method="POST" class="am-form" id="register-form" data-am-validator>
+          <form action="<%= registerUserURL %>" method="POST" id="register-form">
               <span id="group-msg-block"></span>
               <div class="register-form" >
                       <div class="form-item">
                           <label  for=""><span class="register-must">*</span>用户名</label>
-                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="<portlet:namespace/>userName" required placeholder="请输入手机号"/>
+                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="userName" required placeholder="请输入手机号"/>
                       </div>
                       	  
                       <div class="form-item">
@@ -39,7 +39,7 @@
                       
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>姓名</label>
-                          <input class="register-input" minlength="2" type="text" name="<portlet:namespace/>name" placeholder="请输入姓名" required/>
+                          <input class="register-input" minlength="2" maxlength="20" type="text" name="<portlet:namespace/>name" id="name" placeholder="请输入姓名" required/>
                       </div>
         
                       <div class="form-item">
@@ -54,22 +54,22 @@
                       
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>请设置密码</label>
-                          <input class="register-input" minlength="6" id="reg-vld-pwd-1" name="<portlet:namespace/>pwd" type="password" placeholder="请输入至少6位密码" required/>
+                          <input class="register-input" minlength="6" maxlength="20" id="reg-vld-pwd-1" name="<portlet:namespace/>pwd" type="password" placeholder="请输入至少6位密码" required/>
                       </div>
 
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>请确认密码</label>
-                          <input class="register-input" id="reg-vld-pwd-2" name="<portlet:namespace/>repeat_pwd" type="password"  placeholder="请与上面输入的值一致" data-equal-to="#reg-vld-pwd-1" required/>
+                          <input class="register-input" id="reg-vld-pwd-2" name="<portlet:namespace/>repeat_pwd" type="password" placeholder="请与上面输入的值一致" data-equal-to="#reg-vld-pwd-1" required/>
                       </div>            
 
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>您的净身高</label>
-                          <input class="register-input"  type="text" name="<portlet:namespace/>height" required/><span class="body">cm</span>
+                          <input class="register-input"  type="text" id="height" name="<portlet:namespace/>height" required/><span class="body">cm</span>
                        </div>
                        
                        <div class="form-item">
                           <label for=""><span class="register-must">*</span>您的净体重</label>
-                          <input class="register-input"  type="text" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
+                          <input class="register-input"  type="text" id="weight" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
                        </div>	
                        
                        <h3 class="cfm-ttl"><span class="register-must">*</span>体型确认</h3>
@@ -169,10 +169,49 @@
 
 <script type="text/javascript">
 $(function(){
-		$('.cfm-item-list .cfm-item').on('click', function(){
-			$(this).addClass('active').siblings().removeClass('active');
-		});
+	$('.cfm-item-list .cfm-item').on('click', function(){
+		$(this).addClass('active').siblings().removeClass('active');
 	});
+});
+
+$("#button").click(function(event){
+    alert('Start Jquery Validation')
+	var str = "";
+    var res = true;
+   /*  if($('#status').text()!='验证码输入正确'){
+        str += "输入的验证码错误哦\n";
+        res = false;
+    }*/
+     if(!/^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/.test($("#userName").val())){
+        alert('username')
+    	str += "输入的手机号错误哦\n";
+        res = false;
+    }  
+    if($("#reg-vld-pwd-2").val()!=$("#reg-vld-pwd-1").val()){
+        alert('repeat password');
+    	str += '两次密码输入不一致哦\n';
+        res = false;
+    }
+	if(!(/^[0-9]+(.[0-9]{1,3})?$/.test($("#height").val()))){
+        str += '输入的身高格式错误哦\n';
+        res = false;
+    }
+    if(!(/^[0-9]+(.[0-9]{1,3})?$/.test($("#weight").val()))){
+        str += '输入的体重格式错误哦\n';
+        res = false;
+    } 
+    if(!$("#back").find('.cfm-item.active').length || !$("#shoulder_f").find('.cfm-item.active').length || !$("#shoulder_p").find('.cfm-item.active').length || !$("#belly").find('.cfm-item.active').length){
+        alert('shape confirmation');
+    	str += '您还没有选择后背/肩膀俯视/肩膀平视/肚子特征';
+        res = false;
+    }
+    if(!res){
+        alert(str);
+        event.preventDefault();
+        return;
+    }
+})
+
 var wait=60;
 function time() {
 	console.log(wait);
@@ -203,7 +242,7 @@ function callServeResource(){
     		messageNode.remove();
     	}
     	var messageNode = A.Node.create('<div id="message"></div>');
-    	var inputUserName = A.one("#<portlet:namespace/>userName").get("value");
+    	var inputUserName = A.one("#userName").get("value");
         A.io.request('<%=resourceURL.toString()%>', {
                method: 'post',
                data: {
@@ -232,7 +271,6 @@ function callServeResource(){
         	       }
                }
         });
- 
     });
-}
+}   
 </script>
