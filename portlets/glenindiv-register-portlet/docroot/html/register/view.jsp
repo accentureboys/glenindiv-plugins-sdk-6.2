@@ -175,20 +175,17 @@ $(function(){
 });
 
 $("#button").click(function(event){
-    alert('Start Jquery Validation')
 	var str = "";
     var res = true;
-   /*  if($('#status').text()!='验证码输入正确'){
-        str += "输入的验证码错误哦\n";
+    if($("#reg-ver-cd-2").val()!=$("#reg-ver-cd-1").val()){
+    	str += '输入的验证码错误哦\n';
         res = false;
-    }*/
+    }
      if(!/^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/.test($("#userName").val())){
-        alert('username')
     	str += "输入的手机号错误哦\n";
         res = false;
     }  
     if($("#reg-vld-pwd-2").val()!=$("#reg-vld-pwd-1").val()){
-        alert('repeat password');
     	str += '两次密码输入不一致哦\n';
         res = false;
     }
@@ -201,7 +198,6 @@ $("#button").click(function(event){
         res = false;
     } 
     if(!$("#back").find('.cfm-item.active').length || !$("#shoulder_f").find('.cfm-item.active').length || !$("#shoulder_p").find('.cfm-item.active').length || !$("#belly").find('.cfm-item.active').length){
-        alert('shape confirmation');
     	str += '您还没有选择后背/肩膀俯视/肩膀平视/肚子特征';
         res = false;
     }
