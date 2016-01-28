@@ -83,18 +83,22 @@
                        	  	 <div class="cfm-item" data_sj="后仰">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/back1.png" class="cfm-item-img">
                        	  	    <h3>后仰</h3>
+                       	  	    <input type="radio" id="back1" name="<portlet:namespace/>back" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="标准">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/back2.png" class="cfm-item-img">
                        	  	    <h3>标准</h3>
+                       	  	    <input type="radio" id="back2" name="<portlet:namespace/>back" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="轻微驼背">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/back3.png" class="cfm-item-img">
                        	  	    <h3>轻微驼背</h3>
+                       	  	    <input type="radio" id="back3" name="<portlet:namespace/>back" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="严重驼背">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/back4.png" class="cfm-item-img">
                        	  	    <h3>严重驼背</h3>
+                       	  	    <input type="radio" id="back4" name="<portlet:namespace/>back" value="" required/>
                        	  	 </div>
                        	  </div>
                        </div>
@@ -106,22 +110,27 @@
                        	  	 <div class="cfm-item" data_sj="严重后仰">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder1.png" class="cfm-item-img">
                        	  	    <h3>严重后仰</h3>
+                       	  	    <input type="radio" id="shoulder_f1" name="<portlet:namespace/>shoullder_f" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="轻微后仰">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder2.png" class="cfm-item-img">
                        	  	    <h3>轻微后仰</h3>
+                       	  	    <input type="radio" id="shoulder_f2" name="<portlet:namespace/>shoulder_f" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="标准">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder3.png" class="cfm-item-img">
                        	  	    <h3>标准</h3>
+                       	  	    <input type="radio" id="shoulder_f3" name="<portlet:namespace/>shoulder_f" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="轻微前冲">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder4.png" class="cfm-item-img">
                        	  	    <h3>轻微前冲</h3>
+                       	  	    <input type="radio" id="shoulder_f4" name="<portlet:namespace/>shoulder_f" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="严重前冲">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder4.png" class="cfm-item-img">
                        	  	    <h3>严重前冲</h3>
+                       	  	    <input type="radio" id="shoulder_f5" name="s<portlet:namespace/>houlder_f" value="" required/>
                        	  	 </div>
                        	  </div>
                        </div>
@@ -133,14 +142,17 @@
                        	  	 <div class="cfm-item" data_sj="标准">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder6.png" class="cfm-item-img">
                        	  	    <h3>标准</h3>
+                       	  	    <input type="radio" id="shoulder_p1" name="<portlet:namespace/>shoulder_p" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="平肩">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder7.png" class="cfm-item-img">
                        	  	    <h3>平肩</h3>
+                       	  	    <input type="radio" id="shoulder_p2" name="<portlet:namespace/>shoulder_p" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="溜肩">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/shoulder8.png" class="cfm-item-img">
                        	  	    <h3>溜肩</h3>
+                       	  	    <input type="radio" id="shoulder_p3" name="<portlet:namespace/>shoulder_p" value="" required/>
                        	  	 </div>
                        	  </div>
                        </div>
@@ -152,10 +164,12 @@
                        	  	 <div class="cfm-item" data_sj="标准">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/belly1.png" class="cfm-item-img">
                        	  	    <h3>标准</h3>
+                       	  	    <input type="radio" id="belly1" name="<portlet:namespace/>belly" value=""/>
                        	  	 </div>
                        	  	 <div class="cfm-item" data_sj="啤酒肚">
                        	  	 	<img src="<%= request.getContextPath()%>/images/login/belly2.png" class="cfm-item-img">
                        	  	    <h3>啤酒肚</h3>
+                       	  	    <input type="radio" id="belly2" name="<portlet:namespace/>belly" value=""/>
                        	  	 </div>
                        	  </div>
                        </div>
