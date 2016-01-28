@@ -23,7 +23,8 @@
               <div class="register-form" >
                       <div class="form-item">
                           <label  for=""><span class="register-must">*</span>用户名</label>
-                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="userName" required placeholder="请输入手机号"/>
+                          <input class="register-input" type="text" name="<portlet:namespace/>userName" id="userName" placeholder="请输入手机号" required 
+                          pattern="(\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$"/>
                       </div>
                       	  
                       <div class="form-item">
@@ -34,12 +35,12 @@
                       <div class="form-item">
                       	   <label for=""><span class="register-must">*</span>验证码</label>
                       	   <input id="reg-ver-cd-1" name="<portlet:namespace/>reg-ver-cd-1"  type="hidden"/>
-                      	   <input class="register-input" id="reg-ver-cd-2" name="<portlet:namespace/>reg-ver-cd-2" type="text" maxlength="4" placeholder="请输入验证码" data-equal-to="#reg-ver-cd-1" required/>
+                      	   <input class="register-input" id="reg-ver-cd-2" name="<portlet:namespace/>reg-ver-cd-2" type="text" placeholder="请输入验证码" maxlength="4" required oninput="checkVerCode(this)"/>
                       </div>
                       
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>姓名</label>
-                          <input class="register-input" minlength="2" maxlength="20" type="text" name="<portlet:namespace/>name" id="name" placeholder="请输入姓名" required/>
+                          <input class="register-input" type="text" name="<portlet:namespace/>name" id="name" placeholder="请输入姓名" minlength="2" maxlength="20" required/>
                       </div>
         
                       <div class="form-item">
@@ -54,22 +55,22 @@
                       
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>请设置密码</label>
-                          <input class="register-input" minlength="6" maxlength="20" id="reg-vld-pwd-1" name="<portlet:namespace/>pwd" type="password" placeholder="请输入至少6位密码" required/>
+                          <input class="register-input" id="reg-vld-pwd-1" name="<portlet:namespace/>pwd" type="password" placeholder="请输入至少6位密码" minlength="6" maxlength="20" required/>
                       </div>
 
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>请确认密码</label>
-                          <input class="register-input" id="reg-vld-pwd-2" name="<portlet:namespace/>repeat_pwd" type="password" placeholder="请与上面输入的值一致" data-equal-to="#reg-vld-pwd-1" required/>
+                          <input class="register-input" id="reg-vld-pwd-2" name="<portlet:namespace/>repeat_pwd" type="password" placeholder="请与上面输入的密码保持一致" required oninput="checkPassword(this)"/>
                       </div>            
 
                       <div class="form-item">
                           <label for=""><span class="register-must">*</span>您的净身高</label>
-                          <input class="register-input"  type="text" id="height" name="<portlet:namespace/>height" required/><span class="body">cm</span>
+                          <input class="register-input"  type="text" id="height" name="<portlet:namespace/>height" required pattern="([0-9]{3})"/><span class="body">cm</span>
                        </div>
                        
                        <div class="form-item">
                           <label for=""><span class="register-must">*</span>您的净体重</label>
-                          <input class="register-input"  type="text" id="weight" name="<portlet:namespace/>weight" required/><span class="body">kg</span>
+                          <input class="register-input" type="text" id="weight" name="<portlet:namespace/>weight" required pattern="([0-9]{2,3})"/><span class="body">kg</span>
                        </div>	
                        
                        <h3 class="cfm-ttl"><span class="register-must">*</span>体型确认</h3>
@@ -174,7 +175,25 @@ $(function(){
 	});
 });
 
-$("#button").click(function(event){
+function checkVerCode(input) {
+	if (input.value != document.getElementById('reg-ver-cd-1').value) {
+	    input.setCustomValidity('验证码不匹配，请重新输入');
+	} else {
+	    // input is valid -- reset the error message
+	    input.setCustomValidity('');
+	}
+};
+
+function checkPassword(input) {
+	if (input.value != document.getElementById('reg-vld-pwd-1').value) {
+	    input.setCustomValidity('密码不匹配，请重新输入');
+	} else {
+	    // input is valid -- reset the error message
+	    input.setCustomValidity('');
+	}
+};
+
+/*  $("#button").click(function(event){
 	var str = "";
     var res = true;
     if($("#reg-ver-cd-2").val()!=$("#reg-ver-cd-1").val()){
@@ -196,7 +215,7 @@ $("#button").click(function(event){
     if(!(/^[0-9]+(.[0-9]{1,3})?$/.test($("#weight").val()))){
         str += '输入的体重格式错误哦\n';
         res = false;
-    } 
+    }  
     if(!$("#back").find('.cfm-item.active').length || !$("#shoulder_f").find('.cfm-item.active').length || !$("#shoulder_p").find('.cfm-item.active').length || !$("#belly").find('.cfm-item.active').length){
     	str += '您还没有选择后背/肩膀俯视/肩膀平视/肚子特征';
         res = false;
@@ -206,8 +225,8 @@ $("#button").click(function(event){
         event.preventDefault();
         return;
     }
-})
-
+}) */
+ 
 var wait=60;
 function time() {
 	console.log(wait);
