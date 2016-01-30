@@ -208,40 +208,6 @@ function checkPassword(input) {
 	}
 };
 
-/*  $("#button").click(function(event){
-	var str = "";
-    var res = true;
-    if($("#reg-ver-cd-2").val()!=$("#reg-ver-cd-1").val()){
-    	str += '输入的验证码错误哦\n';
-        res = false;
-    }
-     if(!/^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/.test($("#userName").val())){
-    	str += "输入的手机号错误哦\n";
-        res = false;
-    }  
-    if($("#reg-vld-pwd-2").val()!=$("#reg-vld-pwd-1").val()){
-    	str += '两次密码输入不一致哦\n';
-        res = false;
-    }
-	if(!(/^[0-9]+(.[0-9]{1,3})?$/.test($("#height").val()))){
-        str += '输入的身高格式错误哦\n';
-        res = false;
-    }
-    if(!(/^[0-9]+(.[0-9]{1,3})?$/.test($("#weight").val()))){
-        str += '输入的体重格式错误哦\n';
-        res = false;
-    }  
-    if(!$("#back").find('.cfm-item.active').length || !$("#shoulder_f").find('.cfm-item.active').length || !$("#shoulder_p").find('.cfm-item.active').length || !$("#belly").find('.cfm-item.active').length){
-    	str += '您还没有选择后背/肩膀俯视/肩膀平视/肚子特征';
-        res = false;
-    }
-    if(!res){
-        alert(str);
-        event.preventDefault();
-        return;
-    }
-}) */
- 
 var wait=60;
 function time() {
 	console.log(wait);
