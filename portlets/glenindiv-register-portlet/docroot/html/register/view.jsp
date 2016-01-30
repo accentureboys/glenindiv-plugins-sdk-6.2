@@ -186,6 +186,7 @@
 $(function(){
 	$('.cfm-item-list .cfm-item').on('click', function(){
 		$(this).addClass('active').siblings().removeClass('active');
+		$(this).find("input[type=radio]").attr("checked", 'checked');
 	});
 });
 
