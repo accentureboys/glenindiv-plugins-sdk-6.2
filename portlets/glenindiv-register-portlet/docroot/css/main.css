@@ -233,12 +233,12 @@ footer{
 }
 
 .login-form .form-item .login-input{
-    width: 660px;
-    height: 40px;
+    width: 400px;
+    height: 25px;
     margin: 0 auto;
     display: block;
     margin-top: 15px;
-    line-height: 40px;
+    line-height: 25px;
     vertical-align: middle;
     background: url(/glenindiv-register-login-portlet/images/login/user.png) no-repeat 15px 9px;
     background-size: 20px 22px;
@@ -247,9 +247,21 @@ footer{
 }
 
 .login-form .form-item .userImg{
-	background: url(/glenindiv-register-login-portlet/images/login/user.png) no-repeat 22px 10px;
+	background: url(/glenindiv-register-login-portlet/images/login/user.png) no-repeat 15px 9px;
 }
 
 .login-form .form-item .lockImg{
-	background: url(/glenindiv-register-login-portlet/images/login/lock.png) no-repeat 22px 10px;
+	background: url(/glenindiv-register-login-portlet/images/login/lock.png) no-repeat 15px 9px;
+}
+
+.login-form .form-item .login-input-loginbtn {
+    width: 414px;
+    height: 31px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 25px;
+    line-height: 31px;
+    background: #bfc7dc;
+    border: none;
+    color: #fff;
 }

@@ -10,7 +10,7 @@
         	<div class="form-item">
         		<input class="login-input userImg" type="text" name="<portlet:namespace/>userName" placeholder="手机号" required/>
         		<input class="login-input lockImg" type="password" name="<portlet:namespace/>userPwd" placeholder="密码" required/>
-        		<button class="register" type="submit" id="button">登录</button>
+        		<button class="login-input-loginbtn" type="submit" id="button">登录</button>
        		</div>
         </div>
 	</form>
