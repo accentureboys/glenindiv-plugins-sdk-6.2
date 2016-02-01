@@ -39,7 +39,7 @@ header ul {
     float: left;
 }
 
-/*form starts*/
+/*register form starts*/
 .register-form{
     overflow: hidden;
     width: 880px;
@@ -221,4 +221,35 @@ footer{
     height: 20vh;
     margin-top: 20vh;
     width: 100%;
+}
+/*register form end*/
+
+/*login form started*/
+.login-form{
+    overflow: hidden;
+    width: 880px;
+    margin: 50px auto;
+    border: 10px solid #f7f7f7;
+}
+
+.login-form .form-item .login-input{
+    width: 660px;
+    height: 40px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 15px;
+    line-height: 40px;
+    vertical-align: middle;
+    background: url(/glenindiv-register-login-portlet/images/login/user.png) no-repeat 15px 9px;
+    background-size: 20px 22px;
+    border: 1px solid #dddddd;
+    text-indent: 45px;
+}
+
+.login-form .form-item .userImg{
+	background: url(/glenindiv-register-login-portlet/images/login/user.png) no-repeat 22px 10px;
+}
+
+.login-form .form-item .lockImg{
+	background: url(/glenindiv-register-login-portlet/images/login/lock.png) no-repeat 22px 10px;
 }

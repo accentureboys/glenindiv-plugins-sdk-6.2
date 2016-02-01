@@ -4,5 +4,6 @@
 <display>
 	<category name="glenindiv">
 		<portlet id="register portlet"></portlet>
+		<portlet id="login portlet"></portlet>
 	</category>
 </display>
