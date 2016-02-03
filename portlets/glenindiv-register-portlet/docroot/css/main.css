@@ -265,3 +265,27 @@ footer{
     border: none;
     color: #fff;
 }
+
+.login-form .form-item a.login-register {
+    float: left;
+    color: #fff;
+    background: #333333;
+    margin-left: 232px;
+    border: 1px solid #333333;
+}
+
+.login-form .form-item a.login-a {
+    width: 200px;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.login-form .form-item a.login-forget {
+    float: right;
+    border: 1px solid #ddd;
+    margin-right: 232px;
+}
