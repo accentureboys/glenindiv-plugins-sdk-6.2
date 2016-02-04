@@ -178,6 +178,8 @@
           </form>
 </body>
 
+<jsp:include page="/html/footer.jsp"/>
+
 <script type="text/javascript">
 $(function(){
 	$('.cfm-item-list .cfm-item').on('click', function(){

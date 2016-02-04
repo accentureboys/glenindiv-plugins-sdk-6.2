@@ -217,11 +217,51 @@ header ul {
 }
 /*footer started*/
 footer{
-    background-color: #40484b;
+    background-color: white;
     height: 20vh;
-    margin-top: 20vh;
-    width: 100%;
+    margin: 50px auto;
+    width: 880px;
 }
+
+footer ul {
+    overflow: hidden;
+    padding: 15px 0px;
+    border-top: 1px solid #e7e4e4;
+    border-bottom: 1px solid #e7e4e4;
+}
+
+footer ul li {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+
+footer .footer-left, .footer .footer-right {
+    width: 200px;
+    text-align: center;
+}
+
+footer .fl{
+	float: left;
+}
+
+footer .marginl{
+	margin-left: 120px;
+}
+
+footer .fr{
+	float: right;
+}
+
+footer .marginr{
+	margin-right: 120px;
+}
+
+footer .font-neoter {
+    font-family: 'neotericlight';
+    font-size: 10px;
+}
+/*footer end*/
 /*register form end*/
 
 /*login form started*/

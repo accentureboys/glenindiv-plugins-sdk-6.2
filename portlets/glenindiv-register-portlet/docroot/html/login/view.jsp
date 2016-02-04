@@ -3,6 +3,7 @@
 
 <%
 	long viewPlid = PortalUtil.getPlidFromFriendlyURL(PortalUtil.getCompanyId(request), "/web/guest/register");
+	String footerJsp = request.getContextPath() + "/html/footer.jsp";
 %>
 
 <portlet:actionURL name="userLogin" var="userLoginURL" windowState="normal" />
@@ -25,3 +26,5 @@
         </div>
 	</form>
 </body>
+
+<jsp:include page="/html/footer.jsp"/>
