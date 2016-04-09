@@ -15,7 +15,7 @@ $dockbarOpenGradientStart: #0EA6F9;
 
 /*-----------Override Notification Portlet -------------*/
 .dockbar-user-notifications .dropdown-toggle .user-notifications-count {
-		background-color:  white;
+		background-color: white;
 		border: 0;
 	    border-radius: 4px;
 	    display: block;
@@ -24,7 +24,7 @@ $dockbarOpenGradientStart: #0EA6F9;
 	    padding: 2px 6px;
 	    position: relative;
 	    
-	    :hover{
+	    &:hover{
 	    	background-color:  grey;
 	    }
 }
@@ -101,7 +101,7 @@ $dockbarOpenGradientStart: #0EA6F9;
 						&.active {
 							.dropdown-toggle {
 								background-color: transparent;
-
+								
 								&:hover {
 									color: #FFF;
 								}
