@@ -6,10 +6,17 @@
 
 <head>
 	<title>$the_title - $company_name</title>
-
+    
+	<meta charset="UTF-8">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
 	$theme.include($top_head_include)
+	
+	<script type="text/javascript" src="$javascript_folder/jquery-1.9.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="$javascript_folder/jquery.carouFredSel-6.0.4-packed.js" charset="utf-8"></script>
+    	<script type="text/javascript" src="$javascript_folder/bootstrap.min.js" charset="utf-8"></script>
+    	<script type="text/javascript" src="$javascript_folder/swiper.js" charset="utf-8"></script>
+   <script src="https://cdn.bootcss.com/jquery.pin/1.0.1/jquery.pin.min.js"></script>
 </head>
 
 <body class="$css_class">
@@ -17,43 +24,33 @@
 <a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
 
 $theme.include($body_top_include)
-
-#if ($is_signed_in)
-	#dockbar()
-#end
+	
+#dockbar()
 
 <div class="container-fluid" id="wrapper">
 	<header id="banner" role="banner">
 		<div id="heading">
 			<h1 class="site-title">
 				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
-					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+					<img alt="$logo_description" src="/glenindiv-demo-theme/images/Accenture-Digital-Chinese.png"/>
 				</a>
-
-				#if ($show_site_name)
-					<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
-						$site_name
-					</span>
-				#end
 			</h1>
-
-			<h2 class="page-title">
-				<span>$the_title</span>
-			</h2>
+			
 		</div>
-
-		#if (!$is_signed_in)
-			<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
-		#end
+		
+		<!-- <div class="func-search-block" style="float: right;margin-top:-60px;">
+						$theme.search()
+		</div>   -->
 
 		#if ($has_navigation || $is_signed_in)
 			#parse ("$full_templates_path/navigation.vm")
 		#end
 	</header>
+	
+	
+	<div style="clear:both"></div>
 
 	<div id="content">
-		<nav id="breadcrumbs">#breadcrumbs()</nav>
-
 		#if ($selectable)
 			$theme.include($content_include)
 		#else
@@ -65,10 +62,39 @@ $theme.include($body_top_include)
 		#end
 	</div>
 
-	<footer id="footer" role="contentinfo">
-		<p class="powered-by">
-			#language ("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
+	
+	<footer  id="footer" role="contentinfo">
+	<div class="footer">
+		<div class="footer-content">
+			<div class="footer-links">
+				<a href="/web/guest/aboutUs">#language ("theme-aboutus")</a>
+				<p>|</p>
+				<a href="/web/guest/advertising">#language ("theme-advertising")</a>
+				<p>|</p>
+				<a href="/web/guest/copyright">#language ("theme-copyright")</a>
+				<p>|</p>
+				<a href="/web/guest/disclaimer">#language ("theme-disclaimer")</a>
+				<p>|</p>
+				<a href="/web/guest/sitemap">#language ("theme-sitemap")</a>
+				<p>|</p>
+				<a href="/web/guest/privacyright">#language ("theme-privacyright")</a>
+				<div class="">
+			        <a href=".?p_p_id=82&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_pos=4&amp;p_p_col_count=5&amp;_82_struts_action=%2Flanguage%2Fview&amp;_82_redirect=%2F&amp;_82_languageId=zh_CN">中文</a>
+			        <p>|</p>
+			        <a href=".?p_p_id=82&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_pos=4&amp;p_p_col_count=5&amp;_82_struts_action=%2Flanguage%2Fview&amp;_82_redirect=%2Fweb%2Fguest%2Fhome&amp;_82_languageId=en_US">EN</a>
+			    </div>
+				
+			</div>
+            <div class="footer-poweredby">
+            	<p class="powered-by">
+			@<a href="https://www.accenture.com/cn-zh/digital-index.aspx" rel="external">Accenture Digital </a>技术支持
 		</p>
+            </div>
+
+		</div>
+
+	</div>
+
 	</footer>
 </div>
 
@@ -77,5 +103,49 @@ $theme.include($body_bottom_include)
 $theme.include($bottom_include)
 
 </body>
-
+    <script>
+         var getId = function(id){
+		return document.getElementById(id);
+	}
+    var addEvent = function (obj,event,callBack) {
+    if(obj.addEventListener){
+        obj.addEventListener(event,callBack,false)
+    }
+    else if(obj.attachEvent()){
+        obj.attachEvent("on"+event,callBack)
+    }
+}
+    var banner=getId("banner");
+     
+     addEvent(window,"scroll",function(){
+     	var scroll_height = document.body.scrollTop ||document.documentElement.scrollTop;
+     	console.log(scroll_height);
+     	var banner_top = banner.offsetTop;
+     	var banner_height = banner.offsetHeight;
+     	console.log(banner_top);
+        console.log(banner.offsetHeight);
+        if(document.body.clientWidth<980){
+            
+        }
+         else{
+			            if (scroll_height>120) {
+			             banner.style.position = "fixed";
+			             banner.style.top = "0";
+			             banner.style.left= "0";
+			              banner.style.width= "100%";
+			     	}
+			     	else if (scroll_height<80){
+			     		
+			     		banner.style.position = "relative";
+			     	    banner.style.top = "0";
+			            banner.style.left= "0";
+			     	};
+         
+         
+         }
+       
+     	
+     })
+    </script>
+ 
 </html>
