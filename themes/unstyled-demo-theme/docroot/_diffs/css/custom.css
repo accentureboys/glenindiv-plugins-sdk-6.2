@@ -1,1 +1,20 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+#banner{
+	position:fixed;
+	max-height:80px;
+
+}
+
+#navigation ul li a span{
+	color:#1d1626;
+	font-weight:bold;
+}
+
+#sign-in {
+	background: url(@theme_image_path@/common/key.png) no-repeat 3px 50%;
+	font-weight: bold;
+	padding: 5px 5px 5px 25px;
+	position: absolute;
+	right: 0;
+	top: -1.2em;
+}

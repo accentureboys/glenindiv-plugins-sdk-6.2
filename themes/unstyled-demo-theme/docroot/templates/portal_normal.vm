@@ -26,9 +26,9 @@ $theme.include($body_top_include)
 #end
 
 <div class="container-fluid" id="wrapper">
-	<header id="banner" role="banner">
-		<div id="heading">
-			<h1 class="site-title">
+	<header class="am-topbar style-header" id="banner" role="banner">
+		<div class="am-container-1" id="heading">
+			<h1 class="left hw-logo">
 				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
 					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
 				</a>
@@ -41,10 +41,16 @@ $theme.include($body_top_include)
 			</h1>
 
 		</div>
+		
+		<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+          data-am-collapse="{target: '#doc-topbar-collapse'}">
+          <span class="am-sr-only">导航切换</span> 
+          <span class="am-icon-bars"></span>
+        </button>
 
-		#if (!$is_signed_in)
+		<!--#if (!$is_signed_in)
 			<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
-		#end
+		#end-->
 
 		#if ($has_navigation || $is_signed_in)
 			#parse ("$full_templates_path/navigation.vm")
