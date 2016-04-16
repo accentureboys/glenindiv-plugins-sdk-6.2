@@ -75,7 +75,7 @@ $theme.include($body_bottom_include)
 
 $theme.include($bottom_include)
 
-<script type="text/javascript" src="$javascript_folder/jquery-1.9.1.min.js" charset="utf-8"></script>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
 <script src="http://cdn.amazeui.org/amazeui/2.6.1/js/amazeui.js"></script>
 <script src="http://cdn.amazeui.org/amazeui/2.6.1/js/amazeui.ie8polyfill.js"></script>
 <script src="http://cdn.amazeui.org/amazeui/2.6.1/js/amazeui.widgets.helper.js"></script>
