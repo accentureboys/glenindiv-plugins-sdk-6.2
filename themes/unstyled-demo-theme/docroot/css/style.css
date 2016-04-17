@@ -260,10 +260,9 @@ a {
 .footer {
 	width: 100%;
 	height: auto;
-	background-color: #2d2d2d;
 	overflow: hidden;
 	padding: 0 5% 25px 5%;
-	background: url(../img/bg-pic2.png) no-repeat;
+	background-color: #ddd;
 	background-size: 100% 100%;
 }
 
@@ -274,7 +273,7 @@ a {
 }
 
 .footer ul li {
-	color: #fff;
+	color: #121a2a;
 }
 
 .part-5-words2 p {
@@ -300,11 +299,11 @@ a {
 }
 
 .part-5-words2-ul li a {
-	color: #fff;
+	color: #121a2a;
 }
 
 .part-5-title {
-	color: #fff;
+	color: #121a2a;
 	font-weight: bold;
 	margin-bottom: 20px;
 }

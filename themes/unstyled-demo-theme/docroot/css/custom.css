@@ -1,13 +1,20 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
-#banner{
-	position:fixed;
-	max-height:80px;
-
+.am-topbar-inverse {
+    background:#f8f8f8;
+    border-color:#76624c;
 }
 
-#navigation ul li a span{
+#doc-topbar-collapse-5 ul li a span{
 	color:#1d1626;
 	font-weight:bold;
+}
+
+.am-dropdown-content{
+	min-width: 106px;
+    text-align: center;
+    background: #f8f8f8;
+    border: none;
+    border-radius: 0;
 }
 
 #sign-in {
@@ -16,5 +23,17 @@
 	padding: 5px 5px 5px 25px;
 	position: absolute;
 	right: 0;
-	top: -1.2em;
+}
+
+.footer-poweredby p{
+	margin: 0;
+	font-weight:900;
+	font-size:13px;
+	color: #594c6d;
+}
+	
+.footer-poweredby a{
+	text-decoration: none;
+	color: #594c6d;
+	font-weight:900;
 }

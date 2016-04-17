@@ -1,5 +1,6 @@
-<nav class="$nav_css_class" id="navigation" role="navigation">
-	<ul class="am-nav am-nav-pills" aria-label="#language ("site-pages")" role="menubar">
+<!--<nav class="$nav_css_class" id="navigation" role="navigation">-->
+<div class="am-collapse am-topbar-collapse am-fr" id="doc-topbar-collapse-5">
+	<ul class="am-nav am-nav-pills am-topbar-nav" aria-label="#language ("site-pages")" role="menubar">
 		#foreach ($nav_item in $nav_items)
 			#set ($nav_item_attr_has_popup="")
 			#set ($nav_item_attr_selected="")
@@ -51,4 +52,5 @@
 			</li>
 		#end
 	</ul>
-</nav>
+</div>
+<!--</nav>-->

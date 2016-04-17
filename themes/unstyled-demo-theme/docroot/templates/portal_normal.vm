@@ -11,7 +11,9 @@
 
 	$theme.include($top_head_include)
 	
-	<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.6.1/css/amazeui.css">
+	<link rel="stylesheet" href="$css_folder/amazeui.css">
+	<link rel="stylesheet" href="$css_folder/style.css">
+	<link rel="stylesheet" href="$css_folder/custom.css">
 	
 </head>
 
@@ -25,10 +27,15 @@ $theme.include($body_top_include)
 	#dockbar()
 #end
 
+#if (!$is_signed_in)
+	<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+#end
+
 <div class="container-fluid" id="wrapper">
-	<header class="am-topbar style-header" id="banner" role="banner">
-		<div class="am-container-1" id="heading">
-			<h1 class="left hw-logo">
+	<header class="am-topbar am-topbar-inverse" id="banner" role="banner">
+		<div class="am-container-1">
+		<div class="left hw-logo" id="heading">
+			<h1 class="site-title">
 				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
 					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
 				</a>
@@ -39,18 +46,14 @@ $theme.include($body_top_include)
 					</span>
 				#end
 			</h1>
-
+		</div>
 		</div>
 		
 		<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
-          data-am-collapse="{target: '#doc-topbar-collapse'}">
-          <span class="am-sr-only">导航切换</span> 
-          <span class="am-icon-bars"></span>
-        </button>
-
-		<!--#if (!$is_signed_in)
-			<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
-		#end-->
+          data-am-collapse="{target: '#doc-topbar-collapse-5'}">
+          	<span class="am-sr-only">导航切换</span> 
+          	<span class="am-icon-bars"></span>
+         </button>
 
 		#if ($has_navigation || $is_signed_in)
 			#parse ("$full_templates_path/navigation.vm")
@@ -70,21 +73,107 @@ $theme.include($body_top_include)
 		#end
 	</div>
 
-	<footer id="footer" role="contentinfo">
+	<!--<footer id="footer" role="contentinfo">
 		<p class="powered-by">
 			#language ("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
 		</p>
-	</footer>
+	</footer>-->
+	
+<footer class="footer" id="footer" role="contentinfo">
+	<ul>
+        
+        <li class="am-u-lg-2 am-u-md-4 am-u-sm-12 part-5-li2">
+            <div class="part-5-title">尊选二手车</div>
+            <div class="part-5-words2">
+                <span><a href="">BMW优质回购</a></span>
+                <span><a href="">联系经销商</a></span>
+                <span><a href="">二手车在线展厅</a></span>
+            </div>
+        </li>
+        
+        <li class="am-u-lg-2 am-u-md-4 am-u-sm-12 part-5-li2">
+            <div class="part-5-title">金融服务</div>
+            <div class="part-5-words2">
+                <span><a href="">BMW金融车贷产品</a></span>
+                <span><a href="">各车型贷款计算器</a></span>
+                <span><a href="">BMW延长保修服务</a></span>
+                <span><a href="">BMW融资租赁服务</a></span>
+                <span><a href="">关于BMW金融</a></span>
+            </div>
+        </li>
+        
+        <li class="am-u-lg-2 am-u-md-4 am-u-sm-12 part-5-li2">
+            <div class="part-5-title">BMW车主服务</div>
+            <div class="part-5-words2">
+                <span><a href="">车主优惠活动</a></span>
+                <span><a href="">BMW 移动应用程序</a></span>
+                <span><a href="">BMW 客户关怀服务</a></span>
+                <span><a href="">BMW 售后服务</a></span>
+                <span><a href="">BMW 配件</a></span>
+            </div>
+        </li>
+        
+        <li class="am-u-lg-2 am-u-md-4 am-u-sm-12 part-5-li2">
+            <div class="part-5-title">BMW天地</div>
+            <div class="part-5-words2">
+                <span><a href="">BMW 集团</a></span>
+                <span><a href="">BMW 精彩活动</a></span>
+                <span><a href="">BMW 中国企业社会贡献</a></span>
+                <span><a href="">BMW 之悦</a></span>
+            </div>
+        </li>
+        
+         <li class="am-u-lg-2 am-u-md-4 am-u-sm-12 part-5-li2">
+            <div class="part-5-title">职业发展</div>
+            <div class="part-5-words2">
+                <span><a href="">概述</a></span>
+                <span><a href="">加入我们</a></span>
+                <span><a href="">点燃激情</a></span>
+                <span>邮箱:support@vectorlab.com</span>
+                <span><i class="am-icon-phone"></i><em >027-82671661</em></span>
+            </div>
+        </li>
+        
+        <div class="clear"></div>
+        
+    </ul>
+    <hr></hr>
+    
+    <ul style="padding-left:0px;">
+    	<li class="am-u-lg-5 am-u-md-4 am-u-sm-12 ">
+            <div class="part-5-words2">
+                <ul class="part-5-words2-ul">
+                    <li class="am-u-lg-2 am-u-md-6 am-u-sm-12"><a href="">隐私政策</a></li>
+                    <li class="am-u-lg-2 am-u-md-6 am-u-sm-12"><a href="">使用条款</a></li>
+                    <li class="am-u-lg-2 am-u-md-6 am-u-sm-12"><a href="">销售政策</a></li>
+                    <li class="am-u-lg-2 am-u-md-6 am-u-sm-12"><a href="">法律信息</a></li>
+                    <li class="am-u-lg-2 am-u-md-6 am-u-sm-12"><a href="">网站地图</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </li>
+	</ul>
+	
+    <ul class="footer-poweredby">
+    	<li class="am-u-lg-5 am-u-md-4 am-u-sm-12 ">
+        <p class="powered-by">
+			@<a href="https://www.accenture.com/cn-zh/digital-index.aspx" rel="external">Accenture Digital </a>
+			技术支持
+		</p>
+		</li>
+    </ul>	
+    
+</footer>
 </div>
 
 $theme.include($body_bottom_include)
 
 $theme.include($bottom_include)
 
-<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
-<script src="http://cdn.amazeui.org/amazeui/2.6.1/js/amazeui.js"></script>
-<script src="http://cdn.amazeui.org/amazeui/2.6.1/js/amazeui.ie8polyfill.js"></script>
-<script src="http://cdn.amazeui.org/amazeui/2.6.1/js/amazeui.widgets.helper.js"></script>
+<script src="$javascript_folder/jquery.min.js"></script>
+<script src="$javascript_folder/amazeui.js"></script>
+<script src="$javascript_folder/amazeui.ie8polyfill.js"></script>
+<script src="$javascript_folder/amazeui.widgets.helper.js"></script>
 </body>
 
 </html>
